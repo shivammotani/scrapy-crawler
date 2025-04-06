@@ -18,20 +18,24 @@ This is a flexible and extensible product URL crawler built with **Scrapy**. It 
 ## 🗂️ Project Structure
 
 ```
-product_crawler/
-├── spiders/
-│   ├── product_spider.py        # Base spider
-│   ├── spider_factory.py        # Creates domain-specific spiders
-│   ├── nykaa_spider.py          
-│   ├── tatacliq_spider.py       
-│   ├── westside_spider.py       
-│   └── virgio_spider.py         
-├── utils/                       # URL normalization and helpers
-├── items.py                     # ProductUrlItem definition
-├── pipelines.py                 # File writing/deduplication logic
-├── settings.py                  # ⚙Scrapy settings
-├── run.py                       # Main runner (invokes factory per domain)
-└── requirements.txt             # Python dependencies
+scrapy-crawler/
+├── product_crawler/
+│  ├── spiders/
+│  │   ├── product_spider.py        # Base spider
+│  │   ├── spider_factory.py        # Creates domain-specific spiders
+│  │   ├── nykaa_spider.py          
+│  │   ├── tatacliq_spider.py       
+│  │   ├── westside_spider.py       
+│  │   └── virgio_spider.py         
+│  ├── utils/                       # URL normalization and helpers
+│  ├── items.py                     # ProductUrlItem definition
+│  ├── pipelines.py                 # File writing/deduplication logic
+│  ├── settings.py                  # Scrapy settings
+│  ├── run.py                       # Main runner (invokes factory per domain)
+├── scrapy.cfg                      # Scrapy configuration
+├── .gitignore                      
+├── README.md                       
+└── requirements.txt                # Python dependencies
 ```
 
 ---
@@ -41,8 +45,8 @@ product_crawler/
 1. **Clone the repo**
 
 ```bash
-git clone https://github.com/yourusername/product-crawler.git
-cd product-crawler
+git clone https://github.com/shivammotani/scrapy-crawler.git
+cd scrapy-crawler
 ```
 
 2. **Set up virtual environment (optional but recommended)**
@@ -65,6 +69,7 @@ pip install -r requirements.txt
 Use the custom runner script to loop through domains:
 
 ```bash
+cd product-crawler
 python run.py
 ```
 

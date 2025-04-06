@@ -117,10 +117,13 @@ class MockHeaderAgentMiddleWare:
         self.scrapeops_fake_browser_headers_active = settings.get('SCRAPEOPS_FAKE_BROWSER_HEADER_ENABLED')
         self.scrapeops_num_results = settings.get('SCRAPEOPS_NUM_RESULTS')
         self.scrapeops_headers_list = []
-        self._get_headers_list()
         self._scrapeops_fake_browser_headers_enabled()
+        self._get_headers_list()
 
     def _get_headers_list(self):
+        if not self.scrapeops_fake_browser_headers_active:
+            return
+        
         payload = {'api_key' : self.scrapeops_api_key}
         if self.scrapeops_num_results is not None:
             payload['num_results'] = self. scrapeops_num_results

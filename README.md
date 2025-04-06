@@ -62,6 +62,21 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+4. Add API Key (Optional)
+
+This project uses [ScrapeOps.io](https://scrapeops.io) to generate **random browser headers**, helping avoid blocking requests.
+
+- Sign up at [scrapeops.io](https://scrapeops.io)
+- Retrieve your **Browser Headers API key**
+- Add the key to the `SCRAPEOPS_API_KEY` variable in `settings.py`
+
+If you prefer not to use ScrapeOps, disable the fake browser headers in `settings.py`
+
+
+```python
+SCRAPEOPS_FAKE_BROWSER_HEADER_ENABLED = False
+```
+
 ---
 
 ## 🧪 Running the Crawler

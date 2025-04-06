@@ -1,0 +1,45 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Byte-compiled / optimized / DLL files
+*.so
+*.dll
+*.dylib
+
+# Virtual environment
+venv/
+.env/
+.venv/
+
+# Scrapy-specific
+.scrapy/
+*.log
+*.db
+*.sqlite3
+*.jl
+
+
+# Environment/config
+.env
+*.env
+.env.*
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# MacOS
+.DS_Store
+
+# Pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+
+# Tests
+.pytest_cache/
